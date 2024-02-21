@@ -24,11 +24,9 @@ class LeagueAdapter : ListAdapter<FootballTeam, LeagueAdapter.LeagueViewHolder>(
     }
 
     class LeagueViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val leagueNameTextView: TextView = itemView.findViewById(R.id.textLeague)
         private val leagueImageView: ImageView = itemView.findViewById(R.id.imagePlayer)
 
         fun bind(team: FootballTeam) {
-            leagueNameTextView.text = team.strTeam
             Glide.with(itemView.context)
                 .load(team.strTeamBadge)
                 .into(leagueImageView)

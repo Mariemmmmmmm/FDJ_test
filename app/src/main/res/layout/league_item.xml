@@ -9,9 +9,4 @@
         android:id="@+id/imagePlayer"
         android:layout_width="150dp"
         android:layout_height="120dp"/>
-    <TextView
-        android:id="@+id/textLeague"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></TextView>
-
 </LinearLayout>
