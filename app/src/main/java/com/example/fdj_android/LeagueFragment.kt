@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -38,7 +39,10 @@ class LeagueFragment :  Fragment(){
         adapter = LeagueAdapter()
         val recyclerView: RecyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+        // Change the layout manager to GridLayoutManager
+        recyclerView.layoutManager = GridLayoutManager(requireContext(), 2) // Specify the number of columns
+
         viewModel.getAllLeagues()
 
         viewModel.teams.observe(viewLifecycleOwner, Observer { teams ->
