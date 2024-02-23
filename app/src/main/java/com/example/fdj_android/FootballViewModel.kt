@@ -4,23 +4,26 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 //import com.example.fdj_android.ApiServiceFactory
 import com.example.fdj_android.FootballLeague
-import com.example.fdj_android.FootballTeam
 import kotlinx.coroutines.launch
 
+
+
 class FootballViewModel() : ViewModel() {
+// unit test
+//class FootballViewModel(private val footballRepository: FootballRepository) : ViewModel() {
     private val apiService = ApiServiceFactory.create()
-    private val footballRepository = FootballRepository(apiService)
+   private val footballRepository = FootballRepository(apiService)
 
 
 
     private val _leagues = MutableLiveData<List<FootballLeague>>()
     val leagues: LiveData<List<FootballLeague>> = _leagues
 
-    private val _filteredLeagues = MutableLiveData<List<FootballLeague>>()
+
 
     private val _teams = MutableLiveData<List<FootballTeam>>()
     val teams: LiveData<List<FootballTeam>> = _teams
-
+    private val _filteredLeagues = MutableLiveData<List<FootballLeague>>()
 
     fun getAllLeagues() {
         viewModelScope.launch {

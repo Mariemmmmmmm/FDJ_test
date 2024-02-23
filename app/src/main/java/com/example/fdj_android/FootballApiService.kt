@@ -1,5 +1,4 @@
 import com.example.fdj_android.FootballLeague
-import com.example.fdj_android.FootballTeam
 import retrofit2.http.GET
 import retrofit2.http.Query
 

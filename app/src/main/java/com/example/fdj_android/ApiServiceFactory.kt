@@ -12,9 +12,11 @@ class ApiServiceFactory {
         }
 
         fun create(): FootballApiService {
-            val idapi = context.getString(R.string.api_id)
+            // val idapi = context.getString(R.string.api_id)
             val retrofit = Retrofit.Builder()
-                .baseUrl("https://www.thesportsdb.com/api/v1/json/$idapi/")
+                //.baseUrl("https://www.thesportsdb.com/api/v1/json/$idapi/")
+                .baseUrl("https://www.thesportsdb.com/api/v1/json/50130162/")
+
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
 

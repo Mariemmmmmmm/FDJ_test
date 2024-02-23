@@ -1,6 +1,6 @@
 
 import com.example.fdj_android.FootballLeague
-import com.example.fdj_android.FootballTeam
+
 
 class FootballRepository(private val apiService: FootballApiService) {
     suspend fun getAllLeagues(): List<FootballLeague> {

@@ -1,6 +1,6 @@
 package com.example.fdj_android
 
-import FootballViewModel
+
 import LeagueAdapter
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -12,8 +12,8 @@ import android.widget.AutoCompleteTextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import FootballViewModel
 
 
 
@@ -34,13 +34,18 @@ class LeagueFragment :  Fragment(){
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         viewModel = ViewModelProvider(this)[FootballViewModel::class.java]
 
-        adapter = LeagueAdapter()
+        adapter = LeagueAdapter { team ->
+            val detailsFragment = TeamDetailsFragment.newInstance(team)
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.container, detailsFragment)
+                .addToBackStack(null)
+                .commit()
+        }
         val recyclerView: RecyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.adapter = adapter
-
-        // Change the layout manager to GridLayoutManager
         recyclerView.layoutManager = GridLayoutManager(requireContext(), 2) // Specify the number of columns
 
         viewModel.getAllLeagues()

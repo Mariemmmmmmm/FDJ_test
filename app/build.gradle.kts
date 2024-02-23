@@ -54,6 +54,16 @@ dependencies {
     annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
 
 
+    implementation ("androidx.navigation:navigation-fragment-ktx:2.3.5")
+    implementation ("androidx.navigation:navigation-ui-ktx:2.7.7")
+
+    testImplementation ("androidx.arch.core:core-testing:2.1.0")
+
+    testImplementation ("org.mockito:mockito-inline:3.11.2")
+    testImplementation ("org.mockito.kotlin:mockito-kotlin:3.2.0")
+    testImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.2")
+
+
 
 
 

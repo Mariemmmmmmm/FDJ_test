@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Back Button -->
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/ic_back" /> <!-- Use your own back arrow icon or drawable -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <ImageView
+            android:layout_marginTop="20dp"
+            android:id="@+id/imageBanner"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background" /> <!-- Use a placeholder image -->
+
+
+
+        <TextView
+            android:id="@+id/textTeamName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:layout_marginTop="30dp"
+            android:textSize="28sp"
+            android:gravity="center"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:layout_marginTop="30dp"
+            android:textSize="20sp" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:id="@+id/imageView1"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/ic_launcher_background"
+                        android:scaleType="centerCrop"
+                        android:layout_marginEnd="8dp"/>
+
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/ic_launcher_background"
+                        android:scaleType="centerCrop"
+                        android:layout_marginEnd="8dp"/>
+
+                    <!-- Image 3 -->
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/ic_launcher_background"
+                        android:scaleType="centerCrop"
+                        android:layout_marginEnd="8dp"/>
+
+                    <!-- Image 4 -->
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/ic_launcher_background"
+                        android:scaleType="centerCrop"/>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

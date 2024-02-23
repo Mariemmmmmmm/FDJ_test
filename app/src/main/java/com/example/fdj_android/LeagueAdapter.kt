@@ -9,9 +9,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.fdj_android.R
 import com.example.fdj_android.FootballLeague
-import com.example.fdj_android.FootballTeam
 
-class LeagueAdapter : ListAdapter<FootballTeam, LeagueAdapter.LeagueViewHolder>(LeagueDiffCallback()) {
+
+
+class LeagueAdapter(private val onItemClick: (FootballTeam) -> Unit) : ListAdapter<FootballTeam, LeagueAdapter.LeagueViewHolder>(LeagueDiffCallback()) {
+
+//class LeagueAdapter : ListAdapter<FootballTeam, LeagueAdapter.LeagueViewHolder>(LeagueDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LeagueViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.league_item, parent, false)
@@ -21,6 +24,9 @@ class LeagueAdapter : ListAdapter<FootballTeam, LeagueAdapter.LeagueViewHolder>(
     override fun onBindViewHolder(holder: LeagueViewHolder, position: Int) {
         val team = getItem(position)
         holder.bind(team)
+        holder.itemView.setOnClickListener {
+            onItemClick(team)
+        }
     }
 
     class LeagueViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -42,4 +48,6 @@ class LeagueAdapter : ListAdapter<FootballTeam, LeagueAdapter.LeagueViewHolder>(
             return oldItem == newItem
         }
     }
+
+
 }
